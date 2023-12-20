@@ -36,8 +36,8 @@ const Card: React.FC = async () => {
                                                 <span className='text-black'>{new Date(e.fixture_date).toLocaleDateString('en-US', Dateoptions)}</span>
                                             </div>
                                             <div>
-                                                <h1 className='text-[13px] text-black font-bold'>{e.teams_home_name} vs Independiente Res. </h1>
-                                                <h2 className='text-[12px] text-gray-600'>Tigre Res. vs Independiente Res. </h2>
+                                                <h1 className='text-[13px] text-black font-bold'>{e.teams_home_name} vs {e.teams_away_name} </h1>
+                                                <h2 className='text-[12px] text-gray-600'>{e.league_round}</h2>
                                             </div>
                                         </div>
                                     </div>
