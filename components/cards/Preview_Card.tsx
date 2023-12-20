@@ -8,7 +8,7 @@ interface MatchDataItem {
     // Add other properties as needed
 }
 
-const Card: React.FC = async () => {
+const Preview_Card: React.FC = async ({id}:any) => {
     const res = await fetch('https://script.google.com/macros/s/AKfycbzfIt7RlOUeOOVhB8LfP5aQjR1EcyVk1Ojnc4Uo06jwecu5VP0Rwc8pGHRnobidY8EV/exec');
     const result = await res.json();
 
@@ -25,7 +25,7 @@ const Card: React.FC = async () => {
                     <React.Fragment key={index}>
                         <div className='border-y-[1px] border-y-gray-200'>
                             <Link href={`/${convertToSlug(e.teams_home_name)}`}>
-                                <div className='card px-4 py-2 hover:bg-[#eef8fc] transition-all rounded-none'>
+                                <div className='card px-4 py-2 hover:bg-[#eef8fc] rounded-none'>
                                     <div className="container max-w-[1000px] mx-auto">
                                         <div className='flex items-center gap-4'>
                                             <div className='icon'>
@@ -51,4 +51,4 @@ const Card: React.FC = async () => {
     );
 };
 
-export default Card;
+export default Preview_Card;
