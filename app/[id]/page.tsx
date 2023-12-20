@@ -44,8 +44,8 @@ const Page = async ({ params }: { params: { id: string } }) => {
                 <div className='flex items-center flex-col gap-4'>
                   <Image src={match.respons_league_logo} alt={match.respons_league_logo} width={80} height={80} />
                   <div className='text-center'>
-                    <h1>Finals</h1>
-                    <p>Magallanes - China</p>
+                    <h1>{match.teams_home_name}</h1>
+                    <p>{match.league_round} - {match.league_country}</p>
                   </div>
                 </div>
               </div>
