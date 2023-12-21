@@ -32,8 +32,8 @@ const Card: React.FC = async () => {
                                                 <Image src="/ball-football-icon.svg" alt="" width={30} height={30} />
                                             </div>
                                             <div className='flex flex-col text-[12px]'>
-                                                <span className='text-black'>{new Date(e.fixture_date).toLocaleTimeString('en-US', Timeoptions)}</span>
-                                                <span className='text-black'>{new Date(e.fixture_date).toLocaleDateString('en-US', Dateoptions)}</span>
+                                                <span className='text-black text-nowrap'>{new Date(e.fixture_date).toLocaleTimeString('en-US', Timeoptions)}</span>
+                                                <span className='text-black text-nowrap'>{new Date(e.fixture_date).toLocaleDateString('en-US', Dateoptions)}</span>
                                             </div>
                                             <div>
                                                 <h1 className='text-[13px] text-black font-bold'>{e.teams_home_name} vs {e.teams_away_name} </h1>
