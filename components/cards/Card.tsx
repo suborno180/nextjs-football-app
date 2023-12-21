@@ -24,7 +24,7 @@ const Card: React.FC = async () => {
                 {data?.slice(1).map((e, index) => (
                     <React.Fragment key={index}>
                         <div>
-                            <Link href={`/${convertToSlug(e.teams_home_name)}`}>
+                            <Link href={`/${convertToSlug(e.teams_home_name)}_vs_${convertToSlug(e.teams_away_name)}`}>
                                 <div className='card px-4 py-2 hover:bg-[#eef8fc] transition-all rounded-none'>
                                     <div className="container max-w-[1000px] mx-auto">
                                         <div className='flex items-center gap-4'>
