@@ -80,7 +80,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
                   <h2 className='text-black text-center text-[1.2rem]'>{match.teams_home_name ?? 'N/A'}</h2>
                 </div>
               </div>
-              <div className='min-w-28 h-28 0 grid place-content-center '><h1 className='text-4xl text-black animate-ping'>VS</h1></div>
+              <div className='min-w-28 h-28 0 grid place-content-center '><h1 className='text-4xl text-black'>VS</h1></div>
               <div className='w-full h-full'>
                 <div className='grid place-content-center gap-2 py-4'>
                   {
