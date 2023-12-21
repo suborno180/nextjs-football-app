@@ -61,7 +61,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
                 }
                 <div className='text-center w-full'>
                   <h2 className='text-blue-500  font-bold text-2xl'>{match.league_round ?? 'N/A'}</h2>
-                  <p className=''>{match.teams_away_name ?? 'N/A'} - {match.league_country ?? 'N/A'}</p>
+                  <p className=''> {match.league_country ?? 'N/A'}</p>
 
                 </div>
               </div>
@@ -99,7 +99,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
             </div>
             <div className='w-full grid place-content-center'>
               <div className='min-w-11 flex flex-col items-center'>
-                <h3 className='text-red-600 font-bold text-2xl animate-bounce'>Time</h3>
+                <h3 className='text-red-600 font-bold text-2xl animate-bounce'>Time ({match.fixture_timezone})</h3>
                 <span className='text-black'>{new Date(match.fixture_date).toLocaleTimeString('en-US', Timeoptions)}</span>
                 <span className='text-black'>{new Date(match.fixture_date).toLocaleDateString('en-US', Dateoptions)}</span>
               </div>
@@ -110,8 +110,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
                 <span>{match.league_country ?? 'N/A'}</span>
               </div>
               <div className='flex flex-col items-end gap-2'>
-                <Image src={match.league_flag} alt={match.league_flag} width={30} height={30} />
-                <span>{match.league_country ?? 'N/A'}</span>
+                <span><span className='text-black'>Venue:</span> {match.fixture_venue_city ?? 'N/A'}</span>
               </div>
             </div>
           </div>
