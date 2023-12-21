@@ -23,7 +23,13 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
   if (!filteredData.length) {
     // Handle case where no data matches the provided ID
-    return <p>No data found</p>;
+    return (
+      <>
+        <div className='w-screen min-h-screen grid place-content-center'>
+          <p>No data found</p>
+        </div>
+      </>
+    );
   }
 
   const match = filteredData[0];
@@ -100,19 +106,11 @@ const Page = async ({ params }: { params: { id: string } }) => {
             </div>
             <div className='w-full grid grid-cols-2 px-4 lg:px-0 py-4'>
               <div className='flex flex-col items-start gap-2'>
-                {
-                  match.league_flag ?? (
-                    <Image src={match.league_flag} alt={match.league_flag} width={30} height={30} />
-                  )
-                }
+                <Image src={match.league_flag} alt={match.league_flag} width={30} height={30} />
                 <span>{match.league_country ?? 'N/A'}</span>
               </div>
               <div className='flex flex-col items-end gap-2'>
-                {
-                  match.league_flag ?? (
-                    <Image src={match.league_flag} alt={match.league_flag} width={30} height={30} />
-                  )
-                }
+                <Image src={match.league_flag} alt={match.league_flag} width={30} height={30} />
                 <span>{match.league_country ?? 'N/A'}</span>
               </div>
             </div>
