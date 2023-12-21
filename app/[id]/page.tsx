@@ -90,10 +90,19 @@ const Page = async ({ params }: { params: { id: string } }) => {
             </div>
             <div className='w-full grid place-content-center'>
               <div className='min-w-11 flex flex-col items-center'>
-                <h3 className='text-red-600 font-bold text-2xl'>Time</h3>
+                <h3 className='text-red-600 font-bold text-2xl animate-bounce'>Time</h3>
                 <span className='text-black'>{new Date(match.fixture_date).toLocaleTimeString('en-US', Timeoptions)}</span>
                 <span className='text-black'>{new Date(match.fixture_date).toLocaleDateString('en-US', Dateoptions)}</span>
-
+              </div>
+            </div>
+            <div className='w-full grid grid-cols-2 py-4'>
+              <div className='flex flex-col items-start gap-2'>
+                <Image src={match.league_flag ?? "/7628.png"} alt={match.league_flag ?? "/7628.png"} width={30} height={30} />
+                <span>{match.league_country ?? 'N/A'}</span>
+              </div>
+              <div className='flex flex-col items-end gap-2'>
+                <Image src={match.league_flag ?? "/7628.png"} alt={match.league_flag ?? "/7628.png"} width={30} height={30} />
+                <span>{match.league_country ?? 'N/A'}</span>
               </div>
             </div>
           </div>
