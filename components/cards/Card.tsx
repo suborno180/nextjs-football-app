@@ -37,7 +37,7 @@ const Card: React.FC = async () => {
                                             </div>
                                             <div>
                                                 <h1 className='text-[13px] text-black font-bold'>{e.teams_home_name} vs {e.teams_away_name} </h1>
-                                                <h2 className='text-[12px] text-gray-600'>{e.league_round}</h2>
+                                                <h2 className='text-[12px] text-gray-600'>{e.league_round} - {e.league_country?? 'N/A'}</h2>
                                             </div>
                                         </div>
                                     </div>

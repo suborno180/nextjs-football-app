@@ -62,7 +62,6 @@ const Page = async ({ params }: { params: { id: string } }) => {
                 <div className='text-center w-full'>
                   <h2 className='text-blue-500  font-bold text-2xl'>{match.league_round ?? 'N/A'}</h2>
                   <p className=''> {match.league_country ?? 'N/A'}</p>
-
                 </div>
               </div>
             </div>
