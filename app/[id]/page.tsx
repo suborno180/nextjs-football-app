@@ -37,9 +37,12 @@ const Page = async ({ params }: { params: { id: string } }) => {
   return (
     <>
       <main className='min-h-screen bg-base-200'>
-        <section className='w-full min-h-[35rem] bg-white'>
+        <section className='w-full min-h-[35rem] py-4 bg-white'>
+          <div className='container mx-auto'>
+            <BackBotton />
+          </div>
           <div className="container max-w-[1000px] mx-auto">
-            <div className='w-full min-h-24'>
+            <div className='w-full min-h-24 py-8'>
               <div className='grid place-content-center gap-2'>
                 {
                   match.respons_league_logo ?
