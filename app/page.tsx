@@ -1,27 +1,15 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Card from '@/components/cards/Card';
+'use client'
+import { redirect } from 'next/navigation';
+import { useEffect } from 'react';
 
-export default function Home() {
+const Home = () => {
 
+  useEffect(() => {
+    // Redirect to '/wp' when the component mounts
+    redirect('/wp')
+  }, []); // Empty dependency array ensures that the effect runs only once
 
-  return (
-    <>
-      <main className='min-h-screen'>
-        {/* Hero section */}
-        <div className="hero min-h-96 bg-base-200">
-          <div className="hero-content text-center">
-            <div className="max-w-full">
-              <h1 className="text-2xl lg:text-5xl font-bold">Exciting Football Matches</h1>
-              <p className="py-6">Experience the thrill of every game!.</p>
-              {/* <button className="btn btn-primary">Get Started</button> */}
-            </div>
-          </div>
-        </div>
-        <section>
-          <Card />
-        </section>
-      </main>
-    </>
-  );
-}
+  return null; // You can render something here if needed, or just return null
+};
+
+export default Home;
