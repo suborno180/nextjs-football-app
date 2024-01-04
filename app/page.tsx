@@ -1,15 +1,12 @@
-'use client'
-import { redirect } from 'next/navigation';
-import { useEffect } from 'react';
+import Redirect from '@/components/Redirect'
+import React from 'react'
 
 const Home = () => {
+  return (
+    <div>
+      <Redirect />
+    </div>
+  )
+}
 
-  useEffect(() => {
-    // Redirect to '/wp' when the component mounts
-    redirect('/wp')
-  }, []); // Empty dependency array ensures that the effect runs only once
-
-  return null; // You can render something here if needed, or just return null
-};
-
-export default Home;
+export default Home
