@@ -1,10 +1,10 @@
-import Redirect from '@/components/Redirect'
+// import Redirect from '@/components/Redirect'
 import React from 'react'
 
 const Home = () => {
   return (
     <div>
-      <Redirect />
+      {/* <Redirect /> */}
     </div>
   )
 }
