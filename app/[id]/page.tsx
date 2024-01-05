@@ -2,6 +2,7 @@ import { convertToSlug } from '@/helper/functions';
 import { BackBotton } from '@/components/BackBotton'
 import Image from 'next/image';
 import React from 'react';
+import Navbar from '@/components/Navbar';
 
 interface MatchDataItem {
   [x: string]: any;
@@ -43,6 +44,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   return (
     <>
       <main className='min-h-screen bg-base-200'>
+        <Navbar />
         <section className='w-full min-h-[35rem] py-4 bg-white'>
           <div className='container mx-auto'>
             <BackBotton />

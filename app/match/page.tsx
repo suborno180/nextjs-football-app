@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Card from '@/components/cards/Card';
+import { FaHome } from "react-icons/fa";
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
 
@@ -9,6 +11,7 @@ export default function Home() {
     <>
       <main className='min-h-screen'>
         {/* Hero section */}
+        <Navbar />
         <div className="hero min-h-96 bg-base-200">
           <div className="hero-content text-center">
             <div className="max-w-full">
