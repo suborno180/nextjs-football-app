@@ -27,7 +27,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
     // Handle case where no data matches the provided ID
     return (
       <>
-        <div className='w-screen min-h-screen grid place-content-center'>
+        <div className='w-full min-h-screen overflow-hidden grid place-content-center'>
           <p>No data found</p>
         </div>
       </>
@@ -163,7 +163,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     // Handle case where no data matches the provided ID
     return (
       <>
-        <div className='w-screen min-h-screen grid place-content-center'>
+        <div className='w-full min-h-screen grid place-content-center overflow-hidden'>
           <p>No data found</p>
         </div>
       </>
