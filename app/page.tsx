@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </div>
         <section>
-          <div className="container mx-auto">
+          <div className="container mx-auto max-w-[1000px]">
             <div className='grid lg:grid-cols-7 w-full'>
               <div className='w-full min-w-[260px] min-h-36 lg:min-h-screen lg:col-span-2 bg-gray-200 lg:order-1'>
                 <div className='w-full h-full grid place-content-start lg:place-content-center'>
