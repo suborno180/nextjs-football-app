@@ -25,7 +25,7 @@ export default function Blog() {
                 {/* Hero section */}
                 <Navbar />
                 <div>
-                    <div className='container max-w-[1000px] mx-auto'>
+                    <div className='container max-w-[1000px] mx-auto px-3 lg:px-0'>
                         <h1 className='text-2xl text-green-500'>Contact us page</h1>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   const data: MatchDataItem[] = result.data.output;
 
   const filteredData: MatchDataItem[] = data.filter((e: any) => {
-    return `${convertToSlug(e.teams_home_name)}_vs_${convertToSlug(e.teams_away_name)}` === id;
+    return `${convertToSlug(e.teams_home_name)}_vs_${convertToSlug(e.teams_away_name)}_${e.fixture_id}` === id;
   });
 
   if (!filteredData.length) {
@@ -157,7 +157,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   const data: MatchDataItem[] = result.data.output;
 
   const filteredData: MatchDataItem[] = data.filter((e: any) => {
-    return `${convertToSlug(e.teams_home_name)}_vs_${convertToSlug(e.teams_away_name)}` === id;
+    return `${convertToSlug(e.teams_home_name)}_vs_${convertToSlug(e.teams_away_name)}_${e.fixture_id}` === id;
   });
   if (!filteredData.length) {
     // Handle case where no data matches the provided ID

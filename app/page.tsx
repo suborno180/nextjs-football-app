@@ -15,11 +15,12 @@ export default function Home() {
         {/* Hero section */}
         <Navbar />
         <div>
-          <div className='container max-w-[1000px] mx-auto'>
-            <h1 className='text-2xl text-green-500'>Home page</h1>
-          </div>
+          <div className='container max-w-[1000px] mx-auto px-3 lg:px-0'>
+
+          <Card />
         </div>
-      </main>
+      </div>
+    </main >
     </>
   );
 }
