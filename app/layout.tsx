@@ -25,8 +25,8 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen`}>
         <ProgressLoding>
           {children}
-          <Footer />
         </ProgressLoding>
+        <Footer />
       </body>
     </html>
   )
