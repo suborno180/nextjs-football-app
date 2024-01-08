@@ -11,7 +11,6 @@ const Navbar = () => {
                     <div className='w-full flex items-start justify-between lg:justify-start'>
                         <div className='min-h-[50px] grid place-content-center'><Link href={'/'} className='text-black flex items-center gap-2 mr-4'><FaHome size="30" />Home</Link></div>
                         <ul className='lg:flex items-center gap-4 hidden min-h-[50px]'>
-                            <li><Link href={'/match'} className='text-black flex items-center gap-2'>Match</Link></li>
                             <li><Link href={'/about'} className='text-black flex items-center gap-2'>About</Link></li>
                             <li><Link href={'/blog'} className='text-black flex items-center gap-2'>Blogs</Link></li>
                             <li><Link href={'/termsofservice'} className='text-black flex items-center gap-2'>Terms of Service</Link></li>
