@@ -4,12 +4,18 @@ import Image from 'next/image';
 import React from 'react';
 import Navbar from '@/components/Navbar';
 
+
+
+
 interface MatchDataItem {
   [x: string]: any;
   // Add other properties as needed
 }
 
+
+
 const Page = async ({ params }: { params: { id: string } }) => {
+
   const id = params.id;
 
   const res = await fetch('https://script.google.com/macros/s/AKfycbzfIt7RlOUeOOVhB8LfP5aQjR1EcyVk1Ojnc4Uo06jwecu5VP0Rwc8pGHRnobidY8EV/exec', { cache: 'no-store' });
@@ -43,7 +49,9 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
   return (
     <>
+
       <main className='min-h-screen bg-base-200'>
+
         <Navbar />
         <section className='w-full min-h-[35rem] py-4 bg-white'>
           <div className='container mx-auto'>
@@ -122,3 +130,24 @@ const Page = async ({ params }: { params: { id: string } }) => {
 };
 
 export default Page;
+
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const id = params.id;
+
+  const res = await fetch('https://script.google.com/macros/s/AKfycbzfIt7RlOUeOOVhB8LfP5aQjR1EcyVk1Ojnc4Uo06jwecu5VP0Rwc8pGHRnobidY8EV/exec', { cache: 'no-store' });
+  const result = await res.json();
+
+  // Time formatting
+  const data: MatchDataItem[] = result.data.output;
+
+  const filteredData: MatchDataItem[] = data.filter((e: any) => {
+    return `${convertToSlug(e.teams_home_name)}_vs_${convertToSlug(e.teams_away_name)}` === id;
+  });
+  const match = filteredData[0];
+
+  return {
+    title: `${match.teams_home_name} vs ${match.teams_away_name}`,
+    
+  }
+}
