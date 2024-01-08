@@ -7,7 +7,7 @@ const Navbar = () => {
         <>
             <div className='navbar px-6 lg:px-0 bg-white'>
                 <div className="container mx-auto max-w-[1000px]">
-                    <Link href={'/p'} className='text-black flex items-center gap-2'><FaHome size="30" />Home</Link>
+                    <Link href={'/'} className='text-black flex items-center gap-2'><FaHome size="30" />Home</Link>
                 </div>
             </div>
         </>
