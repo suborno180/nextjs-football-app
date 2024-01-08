@@ -11,6 +11,7 @@ const categories = [
     'NFL',
     'Tennis',
     'Volleyball',
+    'wwe'
 ];
 
 export const CategoryPage = () => {
