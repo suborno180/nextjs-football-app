@@ -21,19 +21,19 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-          <Link href="#" className="text-sm hover:text-gray-300">
+          <Link href="/privacypolicy" className="text-sm hover:text-gray-300">
             Terms of Service
           </Link>
-          <Link href="#" className="text-sm hover:text-gray-300">
+          <Link href="/privacypolicy" className="text-sm hover:text-gray-300">
             Privacy Policy
           </Link>
-          <Link href="#" className="text-sm hover:text-gray-300">
+          <Link href="/about" className="text-sm hover:text-gray-300">
             About us
           </Link>
-          <Link href="#" className="text-sm hover:text-gray-300">
+          <Link href="/faq" className="text-sm hover:text-gray-300">
             FAQ
           </Link>
-          <Link href="#" className="text-sm hover:text-gray-300">
+          <Link href="/contact" className="text-sm hover:text-gray-300">
             Contact
           </Link>
           <Link href="/dmca-copyright" className="text-sm hover:text-gray-300">
