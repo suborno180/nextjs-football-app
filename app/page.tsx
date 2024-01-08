@@ -4,6 +4,7 @@ import Card from '@/components/cards/Card';
 import { FaHome } from "react-icons/fa";
 import Navbar from '@/components/navbar/Navbar';
 import { Metadata } from 'next';
+import { CategoryPage } from '@/components/Catagorys';
 
 
 export const metadata: Metadata = {
@@ -44,6 +45,9 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className='w-full min-h-screen lg:col-span-5'>
+                              <div className='w-full min-h-10 my-8 px-4'>
+                                <CategoryPage/>
+                              </div>
                                 <Card />
                             </div>
                         </div>
