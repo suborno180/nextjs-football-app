@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${inter.className} min-h-screen overflow-hidden`}>
+      <body className={`${inter.className} min-h-screen `}>
         <ProgressLoding>
           {children}
         </ProgressLoding>
