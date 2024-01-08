@@ -10,7 +10,8 @@ interface MatchDataItem {
 }
 
 const Card: React.FC = async () => {
-    const res = await fetch('https://script.google.com/macros/s/AKfycbzfIt7RlOUeOOVhB8LfP5aQjR1EcyVk1Ojnc4Uo06jwecu5VP0Rwc8pGHRnobidY8EV/exec', { cache: 'no-store' });
+
+    const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`, { cache: 'no-store' });
     const result = await res.json();
 
     // Time formatting
@@ -39,7 +40,7 @@ const Card: React.FC = async () => {
                                             </div>
                                             <div>
                                                 <h1 className='text-[13px] text-black font-bold'>{e.teams_home_name} vs {e.teams_away_name} </h1>
-                                                <h2 className='text-[12px] text-gray-600'>{e.league_round} - {e.league_country?? 'N/A'}</h2>
+                                                <h2 className='text-[12px] text-gray-600'>{e.league_round} - {e.league_country ?? 'N/A'}</h2>
                                             </div>
                                         </div>
                                     </div>
