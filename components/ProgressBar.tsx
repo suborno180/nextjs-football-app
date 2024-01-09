@@ -11,7 +11,7 @@ export const ProgressLoding = ({
         <>
             <ProgressBar
                 height="4px"
-                color="#ffbe00"
+                color="#22c55e"
                 options={{ showSpinner: false }}
                 shallowRouting
             />
