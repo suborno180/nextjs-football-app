@@ -14,24 +14,26 @@ export const metadata: Metadata = {
   },
 };
 
-const Blog = () => {
-  const blogData = [
-    {
-      id: 1,
-      title: 'The Excitement of Football Matches',
-      date: 'July 15, 2022',
-      image: '/photo-1616514169928-a1e40c6f791c.avif',
-      slug: 'the-excitement-of-football-matches',
-    },
-    {
-      id: 2,
-      title: 'Top Players to Watch This Season',
-      date: 'July 20, 2022',
-      image: '/istockphoto-992892836-612x612.jpg',
-      slug: 'top-players-to-watch-this-season',
-    },
-    // Add more blog entries as needed
-  ];
+const formatDate = (dateString: string): string => {
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-US', options as any);
+};
+
+const Blog = async () => {
+  const apiDat = await fetch('https://blog.crackstreamsports.live/wp-json/wp/v2/posts');
+  const data = await apiDat.json();
+
+  console.log(data);
+
+  const blogData = data.map((blog: any) => ({
+    id: blog.id,
+    title: blog.title.rendered,
+    date: formatDate(blog.date),
+    image: blog.featured_media
+      ? blog._embedded['wp:featuredmedia'][0].source_url
+      : '/image-placeholder.png',
+    slug: blog.slug,
+  }));
 
   return (
     <>
@@ -51,9 +53,8 @@ const Blog = () => {
           description="Explore our latest blog posts and stay updated on the excitement of football matches."
         />
         <div className="container max-w-[1000px] mx-auto px-3 lg:px-0 mt-8">
-          <h1 className="text-3xl font-bold text-green-500 mb-4">Latest Blog Posts</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogData.map((blog) => (
+            {blogData.map((blog:any) => (
               <Link key={blog.id} href={`/blog/${blog.slug}`}>
                 <BlogCard
                   title={blog.title}
