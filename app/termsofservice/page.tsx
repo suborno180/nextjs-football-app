@@ -17,6 +17,14 @@ const TermsOfService = () => {
     <main className="min-h-screen">
       {/* Hero section */}
       <Navbar />
+      {/* Top Google Ads */}
+      <div className="text-center mb-4">
+        {/* Insert Google Ads code or component here */}
+        {/* Example: <GoogleAdsComponent /> */}
+        <div className="container mx-auto">
+          <h1>Top Google Ads</h1>
+        </div>
+      </div>
       <PageHero
         title="Terms of Service"
         description="Read our Terms of Service to understand the rules and regulations for using our website."
@@ -35,6 +43,10 @@ const TermsOfService = () => {
         <p>
           We reserve the right, at our sole discretion, to modify or replace these terms at any time. It is your responsibility to check the terms periodically for changes.
         </p>
+      </div>
+      <div className="container mx-auto max-w-[1000px] my-8 px-3 lg:px-0">
+        {/* Insert Google Ads code or component here */}
+        Show: GoogleAds
       </div>
     </main>
   );

@@ -20,6 +20,14 @@ const About = () => {
             <main className='min-h-screen'>
                 {/* Hero section */}
                 <Navbar />
+                {/* Top Google Ads */}
+                <div className="text-center mb-4">
+                    {/* Insert Google Ads code or component here */}
+                    {/* Example: <GoogleAdsComponent /> */}
+                    <div className="container mx-auto">
+                        <h1>Top Google Ads</h1>
+                    </div>
+                </div>
                 <div className="hero min-h-96 bg-base-200">
                     <div className="hero-content text-center">
                         <div className="max-w-full">
@@ -54,6 +62,11 @@ const About = () => {
                         </div>
                     </div>
                 </section>
+                {/* Space for Google Ads */}
+                <div className="container mx-auto max-w-[1000px] my-8 px-3 lg:px-0">
+                    {/* Insert Google Ads code or component here */}
+                    Show: GoogleAds
+                </div>
             </main>
         </>
     );

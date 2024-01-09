@@ -34,6 +34,14 @@ const FAQ = () => {
     <main className="min-h-screen">
       {/* Hero section */}
       <Navbar />
+      {/* Top Google Ads */}
+      <div className="text-center mb-4">
+        {/* Insert Google Ads code or component here */}
+        {/* Example: <GoogleAdsComponent /> */}
+        <div className="container mx-auto">
+          <h1>Top Google Ads</h1>
+        </div>
+      </div>
       <PageHero
         title="Frequently Asked Questions (FAQ)"
         description="Find answers to common questions about Exciting Football Matches."
@@ -47,6 +55,10 @@ const FAQ = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className="container mx-auto max-w-[1000px] my-8 px-3 lg:px-0">
+        {/* Insert Google Ads code or component here */}
+        Show: GoogleAds
       </div>
     </main>
   );

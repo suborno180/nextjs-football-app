@@ -11,6 +11,14 @@ const PrivacyPolicy = () => {
 
                 {/* Navbar */}
                 <Navbar />
+                {/* Top Google Ads */}
+                <div className="text-center mb-4">
+                    {/* Insert Google Ads code or component here */}
+                    <div className="container mx-auto">
+                        {/* Example: <GoogleAdsComponent /> */}
+                        <h1>Top Google Ads</h1>
+                    </div>
+                </div>
                 {/* Hero section */}
                 <PageHero
                     title="Privacy Policy"
@@ -31,6 +39,10 @@ const PrivacyPolicy = () => {
                         We collect several different types of information for various purposes to provide and improve our service to you.
                     </p>
                     {/* Add more sections based on your Privacy Policy content */}
+                </div>
+                <div className="container mx-auto max-w-[1000px] my-8 px-3 lg:px-0">
+                    {/* Insert Google Ads code or component here */}
+                    Show: GoogleAds
                 </div>
             </main>
         </>
