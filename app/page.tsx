@@ -18,6 +18,7 @@ export default function Home() {
       <main className='min-h-screen'>
         {/* Hero section */}
         <Navbar />
+        <h1>Hello</h1>
         <div className="hero min-h-96 bg-base-200">
           <div className="hero-content text-center">
             <div className="max-w-full">
