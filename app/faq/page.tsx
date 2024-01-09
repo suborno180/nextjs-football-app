@@ -1,5 +1,17 @@
 import React from 'react';
 import Navbar from '@/components/navbar/Navbar';
+import PageHero from '@/components/PageHero';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'FAQ - Exciting Football Matches',
+  description: 'Explore frequently asked questions (FAQ) about Exciting Football Matches and find answers to common queries.',
+  keywords: ['FAQ', 'questions', 'answers'],
+  icons: {
+    icon: '/ball-football-icon.svg'
+  }
+};
+
 
 const FAQ = () => {
   const faqData = [
@@ -20,14 +32,18 @@ const FAQ = () => {
 
   return (
     <main className="min-h-screen">
+      {/* Hero section */}
       <Navbar />
+      <PageHero
+        title="Frequently Asked Questions (FAQ)"
+        description="Find answers to common questions about Exciting Football Matches."
+      />
       <div className="container max-w-[800px] mx-auto px-4 lg:px-0 mt-8">
-        <h1 className="text-4xl font-bold mb-6">Frequently Asked Questions (FAQ)</h1>
         <div>
           {faqData.map((faq, index) => (
             <div key={index} className="mb-6">
               <h2 className="text-xl font-bold mb-2">{faq.question}</h2>
-              <p>{faq.answer}</p>
+              <p className="text-gray-700">{faq.answer}</p>
             </div>
           ))}
         </div>

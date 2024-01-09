@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/navbar/Navbar';
 import { Metadata } from 'next';
+import PageHero from '@/components/PageHero';
+import { BlogCard } from '@/components/cards/BlogCard';
 
 export const metadata: Metadata = {
   title: 'Exciting Football Matches',
@@ -36,25 +38,21 @@ const Blog = () => {
       <main className="min-h-screen">
         {/* Hero section */}
         <Navbar />
+        <PageHero
+          title="Latest Blog Posts"
+          description="Explore our latest blog posts and stay updated on the excitement of football matches."
+        />
         <div className="container max-w-[1000px] mx-auto px-3 lg:px-0 mt-8">
           <h1 className="text-3xl font-bold text-green-500 mb-4">Latest Blog Posts</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogData.map((blog) => (
               <Link key={blog.id} href={`/blog/${blog.slug}`}>
-                <div>
-                  <div className="card p-4 hover:bg-gray-100 transition-all rounded-md">
-                    <div className="image-container relative h-48 overflow-hidden rounded-md mb-4">
-                      <Image
-                        src={blog.image}
-                        alt={blog.title}
-                        layout="fill"
-                        objectFit="cover"
-                      />
-                    </div>
-                    <h2 className="text-xl font-bold text-black">{blog.title}</h2>
-                    <p className="text-gray-500">{blog.date}</p>
-                  </div>
-                </div>
+                <BlogCard
+                  title={blog.title}
+                  date={blog.date}
+                  image={blog.image}
+                  alt={`Image for ${blog.title}`}
+                />
               </Link>
             ))}
           </div>
