@@ -1,6 +1,6 @@
 import Navbar from '@/components/navbar/Navbar';
 import Image from 'next/image';
-import React from 'react'
+import React from 'react';
 
 const BlogDetail = ({ params }: { params: { id: string } }) => {
     const blog = {
@@ -17,7 +17,16 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
     return (
         <>
             <div className='w-full min-h-screen'>
+
                 <Navbar />
+                {/* Top Google Ads */}
+                <div className="text-center mb-4">
+                    {/* Insert Google Ads code or component here */}
+                    {/* Example: <GoogleAdsComponent /> */}
+                    <div className="container mx-auto">
+                        <h1>Top Google Ads</h1>
+                    </div>
+                </div>
                 <div className="container mx-auto max-w-[800px] mt-8">
                     <h1 className="text-4xl font-bold mb-4">{blog.title}</h1>
                     <p className="text-gray-500 mb-4">{blog.date}</p>
@@ -27,6 +36,15 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
                     </div>
                     <div className="prose lg:prose-xl">
                         <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+                    </div>
+                </div>
+
+                {/* Bottom Google Ads */}
+                <div className="text-center mt-4">
+                    {/* Insert Google Ads code or component here */}
+                    {/* Example: <GoogleAdsComponent /> */}
+                    <div className="container mx-auto">
+                        <h1>Bottom Google Ads</h1>
                     </div>
                 </div>
             </div>
@@ -39,7 +57,6 @@ export default BlogDetail;
 export async function generateMetadata({ params }: { params: { id: string } }) {
     const id = params.id;
 
-
     if (!id.length) {
         // Handle case where no data matches the provided ID
         return (
@@ -51,7 +68,6 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
         );
     }
 
-
     // metatags
     return {
         title: 'Exciting Football Matches',
@@ -60,5 +76,5 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
         icons: {
             icon: '/ball-football-icon.svg',
         },
-    }
+    };
 }
