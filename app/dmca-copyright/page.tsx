@@ -45,7 +45,7 @@ const DMCACopyright = () => {
                         <li>Your contact information (name, address, email, and phone number).</li>
                         <li>A description of the copyrighted work that you claim has been infringed.</li>
                         <li>The URL of the location where the copyrighted work exists or a copy of the work.</li>
-                        <li>A statement by you, made under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
+                        <li>A statement by you, made under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright {`owner's`} behalf.</li>
                         <li>Your electronic signature.</li>
                     </ul>
                     <p className="text-gray-700 mt-4">
