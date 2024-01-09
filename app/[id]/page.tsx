@@ -12,15 +12,15 @@ interface MatchDataItem {
 const Page = async ({ params }: { params: { id: string } }) => {
 
   const id = params.id;
-
+  
   const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`, { cache: 'no-store' });
   const result = await res.json();
-
+  
   // Time formatting
   const data: MatchDataItem[] = result.data.output;
 
   const filteredData: MatchDataItem[] = data.filter((e: any) => {
-    return `${convertToSlug(e.teams_home_name)}_vs_${convertToSlug(e.teams_away_name)}_${e.fixture_id}` === id;
+    return `${convertToSlug(e.teams_home_name)}-vs-${convertToSlug(e.teams_away_name)}-${e.fixture_id}` === id;
   });
 
   if (!filteredData.length) {
@@ -157,7 +157,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   const data: MatchDataItem[] = result.data.output;
 
   const filteredData: MatchDataItem[] = data.filter((e: any) => {
-    return `${convertToSlug(e.teams_home_name)}_vs_${convertToSlug(e.teams_away_name)}_${e.fixture_id}` === id;
+    return `${convertToSlug(e.teams_home_name)}-vs-${convertToSlug(e.teams_away_name)}-${e.fixture_id}` === id;
   });
   if (!filteredData.length) {
     // Handle case where no data matches the provided ID

@@ -23,7 +23,7 @@ const Blog = async () => {
   const apiDat = await fetch('https://blog.crackstreamsports.live/wp-json/wp/v2/posts');
   const data = await apiDat.json();
 
-  console.log(data);
+  // console.log(data);
 
   const blogData = data.map((blog: any) => ({
     id: blog.id,
