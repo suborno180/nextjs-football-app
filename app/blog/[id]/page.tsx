@@ -34,6 +34,11 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
                         {/* Use the 'prose' class for a more readable text layout */}
                         <Image src={blog.imageUrl} alt={blog.title} width={800} height={500} className="rounded-md" />
                     </div>
+                    <div className='my-4 w-full'>
+                        <div className='w-full text-center'>
+                            <h1>Center Google Ads</h1>
+                        </div>
+                    </div>
                     <div className="prose lg:prose-xl">
                         <div dangerouslySetInnerHTML={{ __html: blog.content }} />
                     </div>
