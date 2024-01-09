@@ -35,7 +35,7 @@ const ContactUs = () => {
                     <div className='container max-w-[1000px] mx-auto px-3 lg:px-0 py-16'>
                         <div className="text-center">
                             <h1 className='text-4xl lg:text-6xl font-bold mb-4'>Get in Touch With Us</h1>
-                            <p className='text-xl mb-8'>We'd love to hear from you!</p>
+                            <p className='text-xl mb-8'>{`We'd`} love to hear from you!</p>
                             {/* Contact Form */}
                             <form className='max-w-md mx-auto'>
                                 <div className='mb-4'>
@@ -57,7 +57,7 @@ const ContactUs = () => {
                             {/* Additional Details */}
                             <div className='mt-12'>
                                 <p className='text-lg'>
-                                    If you prefer, you can also reach us via email at <span className='font-semibold'>info@excitingfootballmatches.com</span>.
+                                    If you prefer, you can also reach us via email at <span className='font-semibold'>info@excitingfootballmatches.com</span>
                                 </p>
                                 <p className='text-lg mt-4'>
                                     Our office is located at <span className='font-semibold'>123 Football Street, Stadium City</span>.

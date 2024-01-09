@@ -39,7 +39,7 @@ const DMCACopyright = () => {
                         This is the DMCA Copyright page. You can add information regarding Digital Millennium Copyright Act (DMCA) compliance, copyright infringement reporting procedures, and any other relevant details.
                     </p>
                     <p className="text-gray-700 mt-4">
-                        If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement, please contact us at [Your Contact Email] with the following information:
+                        If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement, please contact us at Your Contact Email with the following information:
                     </p>
                     <ul className="list-disc pl-6 mt-2 text-gray-700">
                         <li>Your contact information (name, address, email, and phone number).</li>
