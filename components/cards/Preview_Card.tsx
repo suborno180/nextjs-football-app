@@ -29,7 +29,7 @@ const Preview_Card: React.FC = async ({ id }: any) => {
                                     <div className="container max-w-[1000px] mx-auto">
                                         <div className='flex items-center gap-4'>
                                             <div className='icon'>
-                                                <Image src="/ball-football-icon.svg" alt="" width={30} height={30} />
+                                                <Image src="/ball-football-icon.svg" alt="" width={30} height={30} loading='lazy' />
                                             </div>
                                             <div className='flex flex-col text-[12px]'>
                                                 <span className='text-black'>{new Date(e.fixture_date).toLocaleTimeString('en-US', Timeoptions)}</span>

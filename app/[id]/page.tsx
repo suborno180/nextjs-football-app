@@ -59,7 +59,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
                   {
                     match.respons_league_logo ?
                       (
-                        <Image src={match.respons_league_logo} className='mx-auto' alt={match.respons_league_logo} width={100} height={100} />
+                        <Image src={match.respons_league_logo} className='mx-auto' alt={match.respons_league_logo} width={100} height={100} loading='lazy' />
                       ) :
                       (
                         <div className="skeleton w-32 h-32"></div>
@@ -77,7 +77,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
                     {
                       match.teams_home_logo ?
                         (
-                          <Image src={match.teams_home_logo} className='mx-auto' alt={match.respons_league_logo} width={80} height={80} />
+                          <Image src={match.teams_home_logo} className='mx-auto' alt={match.respons_league_logo} width={80} height={80} loading='lazy' />
                         ) :
                         (
                           <div className="skeleton w-32 h-32"></div>
@@ -92,7 +92,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
                     {
                       match.teams_away_logo ?
                         (
-                          <Image src={match.teams_away_logo} className='mx-auto' alt={match.teams_away_logo} width={80} height={80} />
+                          <Image src={match.teams_away_logo} className='mx-auto' alt={match.teams_away_logo} width={80} height={80} loading='lazy' />
                         ) :
                         (
                           <div className="skeleton w-32 h-32"></div>
@@ -114,7 +114,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
               </div>
               <div className='w-full grid grid-cols-2 px-4 lg:px-0 py-4'>
                 <div className='flex flex-col items-start gap-2'>
-                  <Image src={match.league_flag} alt={match.league_flag} width={30} height={30} />
+                  <Image src={match.league_flag} alt={match.league_flag} width={30} height={30} loading='lazy' />
                   <span>{match.league_country ?? 'N/A'}</span>
                 </div>
                 <div className='flex flex-col items-end gap-2'>
