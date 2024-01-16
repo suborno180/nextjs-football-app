@@ -150,7 +150,7 @@ export default Page;
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const id = params.id;
 
-  const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`, { cache: 'no-store' });
+  const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`);
   const result = await res.json();
 
   // Time formatting
