@@ -12,10 +12,10 @@ interface MatchDataItem {
 const Page = async ({ params }: { params: { id: string } }) => {
 
   const id = params.id;
-  
+
   const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`);
   const result = await res.json();
-  
+
   // Time formatting
   const data: MatchDataItem[] = result.data.output;
 
@@ -175,6 +175,9 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   return {
     title: `${match.teams_home_name} vs ${match.teams_away_name}`,
     description: `watch every ${match.teams_home_name} vs ${match.teams_away_name} every matchas online`,
-    keywords: [`${match.teams_home_name}`,` ${match.teams_away_name}`, `hightight ${match.teams_home_name}`, `highlight ${match.teams_away_name}`, `${match.teams_home_name}-A stream`, `${match.teams_away_name}-B stream`, `live online ${match.teams_home_name}`, `live online ${match.teams_away_name}`],
+    keywords: [`${match.teams_home_name}`, ` ${match.teams_away_name}`, `hightight ${match.teams_home_name}`, `highlight ${match.teams_away_name}`, `${match.teams_home_name}-A stream`, `${match.teams_away_name}-B stream`, `live online ${match.teams_home_name}`, `live online ${match.teams_away_name}`],
+    icons: {
+      icon: '/ball-football-icon.svg'
+    }
   }
 }
