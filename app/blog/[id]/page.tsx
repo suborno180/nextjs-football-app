@@ -32,7 +32,7 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
                     <p className="text-gray-500 mb-4">{blog.date}</p>
                     <div className="mb-6">
                         {/* Use the 'prose' class for a more readable text layout */}
-                        <Image src={blog?.imageUrl} alt={blog.title} width={800} height={500} className="rounded-md" />
+                        <img src={blog?.imageUrl} alt={blog.title} width={800} height={500} className="rounded-md" />
                     </div>
                     <div className='my-4 w-full'>
                         <div className='w-full text-center'>
