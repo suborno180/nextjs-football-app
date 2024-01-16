@@ -48,7 +48,7 @@ export default function Home() {
                   <CategoryPage />
                 </div>
                 <div className='px-4'>
-                  <h1 className="text-4xl font-bold mb-4 capitalize">match schedule 2</h1>
+                  <h1 className="text-4xl font-bold mb-4 capitalize">match schedule</h1>
                   <Card />
                 </div>
               </div>
