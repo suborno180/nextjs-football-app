@@ -9,7 +9,7 @@ interface MatchDataItem {
 }
 
 const Preview_Card: React.FC = async ({ id }: any) => {
-    const res = await fetch('https://script.google.com/macros/s/AKfycbzfIt7RlOUeOOVhB8LfP5aQjR1EcyVk1Ojnc4Uo06jwecu5VP0Rwc8pGHRnobidY8EV/exec', { cache: 'no-store' });
+    const res = await fetch('https://script.google.com/macros/s/AKfycbzfIt7RlOUeOOVhB8LfP5aQjR1EcyVk1Ojnc4Uo06jwecu5VP0Rwc8pGHRnobidY8EV/exec');
     const result = await res.json();
 
     // Time formatting
