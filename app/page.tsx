@@ -1,10 +1,32 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Card from '@/components/cards/Card';
+// import Card from '@/components/cards/Card';
 import { FaHome } from "react-icons/fa";
 import Navbar from '@/components/navbar/Navbar';
 import { Metadata } from 'next';
 import { CategoryPage } from '@/components/Catagorys';
+import dynamic from 'next/dynamic'
+import CardSklitan from '@/components/cards/CardSklitan';
+
+const Card = dynamic(() => import('@/components/cards/Card'), {
+  loading: () => <>
+    <div className='flex flex-col gap-4'>
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+      <CardSklitan />
+    </div>
+  </>,
+})
 
 export const metadata: Metadata = {
   title: 'Exciting Football Matches',
@@ -32,6 +54,7 @@ export default function Home() {
           </div>
         </div>
         <section>
+
           <div className="container mx-auto max-w-[1000px]">
             <div className='grid lg:grid-cols-7 w-full'>
               {/* Sidebar Section */}
