@@ -1,11 +1,12 @@
 import { BackBotton } from '@/components/BackBotton'
+import CardPreview from '@/components/cards/CardPreview'
 import Navbar from '@/components/navbar/Navbar'
 import dynamic from 'next/dynamic'
 import React from 'react'
 
 const Preview = dynamic(() => import('./preview'), {
   loading: () => <>
-  
+    <CardPreview />
   </>
 })
 
