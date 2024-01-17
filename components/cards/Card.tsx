@@ -11,8 +11,11 @@ interface MatchDataItem {
 }
 
 const Card: React.FC = async () => {
-    const [scrollHight, setScrollHight] = useState<number>()
-    console.log('scroll Hight',scrollHight);
+    const [page, setPage] = useState<number>(1)
+    console.log(page);
+
+    const [scrollHight, setScrollHight] = useState<number>(0)
+    // console.log('scroll Hight', scrollHight);
 
     // const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`, {cache: 'no-cache'});
     // const result = await res.json();
@@ -24,17 +27,28 @@ const Card: React.FC = async () => {
     // const Dateoptions: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric' as const };
 
     const getScrollHight = async () => {
-        const scrlHight = document.documentElement.scrollHeight
-        setScrollHight(scrlHight)
+        try {
+            const scrlHight = document.documentElement.scrollHeight
+            const scrlTopHight = document.documentElement.scrollTop
+            // setScrollHight(scrlHight)
+            if (window.innerHeight + scrlTopHight + 10 >= scrlHight) {
+                setPage((prev) => prev + 1)
+            }
+
+        } catch (error) {
+            console.log(error);
+
+        }
     }
 
     useEffect(() => {
         window.addEventListener('scroll', getScrollHight)
+        return () => window.removeEventListener('scroll', getScrollHight)
     }, [])
 
     return (
         <>
-            <div>
+            <div >
 
                 {/* {data?.slice(1).map((e, index) => (
                     <React.Fragment key={index}>
