@@ -8,6 +8,7 @@ const nextConfig = {
         // See: https://www.npmjs.com/package/next-sitemap
         exclude: ['/terms', '/privacy'], // Add any paths you want to exclude from the sitemap
     },
+    reactStrictMode: true,
 }
 
 module.exports = nextConfig

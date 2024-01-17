@@ -11,10 +11,6 @@ interface MatchDataItem {
 }
 
 const Card: React.FC = async () => {
-    const [page, setPage] = useState<number>(1)
-    console.log(page);
-
-    const [scrollHight, setScrollHight] = useState<number>(0)
     // console.log('scroll Hight', scrollHight);
 
     // const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`, {cache: 'no-cache'});
@@ -25,6 +21,10 @@ const Card: React.FC = async () => {
 
     // const Timeoptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
     // const Dateoptions: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric' as const };
+    const [page, setPage] = useState<number>(1)
+    console.log(page);
+
+    const [scrollHight, setScrollHight] = useState<number>(0)
 
     const getScrollHight = async () => {
         try {
@@ -43,8 +43,8 @@ const Card: React.FC = async () => {
 
     useEffect(() => {
         window.addEventListener('scroll', getScrollHight)
-        return () => window.removeEventListener('scroll', getScrollHight)
-    }, [])
+        // return () => window.removeEventListener('scroll', getScrollHight)
+    }, [page])
 
     return (
         <>
