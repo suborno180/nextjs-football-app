@@ -1,8 +1,9 @@
+'use client'
 import { convertToSlug } from '@/helper/functions';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { IoFootball } from "react-icons/io5";
 
 interface MatchDataItem {
     [x: string]: any;
@@ -10,21 +11,32 @@ interface MatchDataItem {
 }
 
 const Card: React.FC = async () => {
+    const [scrollHight, setScrollHight] = useState<number>()
+    console.log('scroll Hight',scrollHight);
 
-    const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`, {cache: 'no-cache'});
-    const result = await res.json();
+    // const res = await fetch(`https://script.google.com/macros/s/${process.env.GOOGLE_SHEET_SECRET}/exec`, {cache: 'no-cache'});
+    // const result = await res.json();
 
-    // Time formatting
-    const data: MatchDataItem[] = result.data.output;
+    // // Time formatting
+    // const data: MatchDataItem[] = result.data.output;
 
-    const Timeoptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
-    const Dateoptions: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric' as const };
+    // const Timeoptions: Intl.DateTimeFormatOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
+    // const Dateoptions: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric' as const };
+
+    const getScrollHight = async () => {
+        const scrlHight = document.documentElement.scrollHeight
+        setScrollHight(scrlHight)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', getScrollHight)
+    }, [])
 
     return (
         <>
             <div>
 
-                {data?.slice(1).map((e, index) => (
+                {/* {data?.slice(1).map((e, index) => (
                     <React.Fragment key={index}>
                         <div>
                             <Link href={`/${convertToSlug(e.teams_home_name)}-vs-${convertToSlug(e.teams_away_name)}-${e.fixture_id}`}>
@@ -32,7 +44,7 @@ const Card: React.FC = async () => {
                                     <div className="container max-w-[1000px] mx-auto">
                                         <div className='flex items-center gap-4'>
                                             <div className='icon'>
-                                                <Image src="/ball-football-icon.svg" alt="" width={30} height={30} loading='lazy' />
+                                                <IoFootball size={30} />
                                             </div>
                                             <div className='flex flex-col text-[12px]'>
                                                 <span className='text-black text-nowrap'>{new Date(e.fixture_date).toLocaleTimeString('en-US', Timeoptions)}</span>
@@ -48,7 +60,7 @@ const Card: React.FC = async () => {
                             </Link>
                         </div>
                     </React.Fragment>
-                ))}
+                ))} */}
             </div>
         </>
     );
