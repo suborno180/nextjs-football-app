@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.8.1",
     "next": "14.0.4",
     "next-nprogress-bar": "^2.1.2",
     "next-sitemap": "^4.2.3",
+    "prisma": "^5.8.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",

@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Match {
+  id                     String   @id @default(auto()) @map("_id") @db.ObjectId
+  slug                   String   @unique
+  fixture_id             Int?
+  fixture_referee        String?
+  fixture_timezone       String?
+  fixture_date           DateTime
+  fixture_timestamp      Int?
+  fixture_periods_first  String?
+  fixture_periods_second String?
+  league_id              Int?
+  fixture_venue_city     String?
+  fixture_status_long    String?
+  fixture_status_short   String?
+  fixture_status_elapsed String?
+  response_league_name   String?
+  league_country         String?
+  response_league_logo   String?
+  league_flag            String?
+  league_season          Int?
+  league_round           String?
+  teams_home_id          Int?
+  teams_home_name        String?
+  teams_home_logo        String?
+  teams_home_winner      String?
+  teams_away_id          Int?
+  teams_away_name        String?
+  teams_away_logo        String?
+  teams_away_winner      String?
+  goals_home             String?
+  goals_away             String?
+  score_halftime_home    String?
+  score_halftime_away    String?
+}
