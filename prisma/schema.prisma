@@ -12,11 +12,10 @@ datasource db {
 
 model Match {
   id                     String   @id @default(auto()) @map("_id") @db.ObjectId
-  slug                   String   @unique
   fixture_id             Int?
   fixture_referee        String?
   fixture_timezone       String?
-  fixture_date           DateTime
+  fixture_date           String?
   fixture_timestamp      Int?
   fixture_periods_first  String?
   fixture_periods_second String?

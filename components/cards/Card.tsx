@@ -31,7 +31,7 @@ const Card: React.FC = async () => {
             const scrlHight = document.documentElement.scrollHeight
             const scrlTopHight = document.documentElement.scrollTop
             // setScrollHight(scrlHight)
-            if (window.innerHeight + scrlTopHight + 10 >= scrlHight) {
+            if (window.innerHeight + scrlTopHight >= scrlHight) {
                 setPage((prev) => prev + 1)
             }
 
