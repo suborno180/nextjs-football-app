@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,35 +8,36 @@ datasource db {
 }
 
 model Match {
-  id                     String   @id @default(auto()) @map("_id") @db.ObjectId
-  fixture_id             Int?
-  fixture_referee        String?
-  fixture_timezone       String?
-  fixture_date           String?
-  fixture_timestamp      Int?
-  fixture_periods_first  String?
-  fixture_periods_second String?
-  league_id              Int?
-  fixture_venue_city     String?
-  fixture_status_long    String?
-  fixture_status_short   String?
-  fixture_status_elapsed String?
-  response_league_name   String?
-  league_country         String?
-  response_league_logo   String?
-  league_flag            String?
-  league_season          Int?
-  league_round           String?
-  teams_home_id          Int?
-  teams_home_name        String?
-  teams_home_logo        String?
-  teams_home_winner      String?
-  teams_away_id          Int?
-  teams_away_name        String?
-  teams_away_logo        String?
-  teams_away_winner      String?
-  goals_home             String?
-  goals_away             String?
-  score_halftime_home    String?
-  score_halftime_away    String?
+  id                     String @id @default(auto()) @map("_id") @db.ObjectId
+  fixture_date           String
+  fixture_id             BigInt
+  fixture_periods_first  String
+  fixture_periods_second String
+  fixture_referee        String
+  fixture_status_elapsed String
+  fixture_status_long    String
+  fixture_status_short   String
+  fixture_timestamp      BigInt
+  fixture_timezone       String
+  fixture_venue_city     String
+  goals_away             String
+  goals_home             String
+  league_country         String
+  league_flag            String
+  league_id              BigInt
+  league_round           String
+  league_season          BigInt
+  response_league_logo   String
+  response_league_name   String
+  score_halftime_away    String
+  score_halftime_home    String
+  /// Field referred in an index, but found no data to define the type.
+  slug                   Json?  @unique
+  teams_away_logo        String
+  teams_away_name        String
+  teams_away_winner      String
+  teams_home_id          BigInt
+  teams_home_logo        String
+  teams_home_name        String
+  teams_home_winner      String
 }

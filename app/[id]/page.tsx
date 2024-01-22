@@ -3,7 +3,7 @@ import { BackBotton } from '@/components/BackBotton'
 import Image from 'next/image';
 import React from 'react';
 import Navbar from '@/components/navbar/Navbar';
-import CardPreview from '@/components/cards/CardPreview';
+import CardPreview from '@/components/cards/CardPreviewSklitan';
 
 interface MatchDataItem {
   [x: string]: any;
